@@ -104,25 +104,25 @@ public class DistroDetector {
 					}
 				}
 				
-				if (distro == null && lsbreleaseMap != null) {
-					String distribid = osreleaseMap.get("DISTRIB_ID");
-					
-					if (distribid != null) {
-						detect = distribid.replace("\"", "");
-					}
+                               if (distro == null && lsbreleaseMap != null) {
+                                       String distribid = lsbreleaseMap.get("DISTRIB_ID");
 
-					String distribrelease = osreleaseMap.get("DISTRIB_RELEASE");
-					
-					if (distribrelease != null) {
-						release = distribrelease.replace("\"", "");
-					}
-					
-					String distribcodename = osreleaseMap.get("DISTRIB_CODENAME");
-					
-					if (distribcodename != null) {
-						codename = distribcodename.replace("\"", "");
-					}
-				}
+                                       if (distribid != null) {
+                                               detect = distribid.replace("\"", "");
+                                       }
+
+                                       String distribrelease = lsbreleaseMap.get("DISTRIB_RELEASE");
+
+                                       if (distribrelease != null) {
+                                               release = distribrelease.replace("\"", "");
+                                       }
+
+                                       String distribcodename = lsbreleaseMap.get("DISTRIB_CODENAME");
+
+                                       if (distribcodename != null) {
+                                               codename = distribcodename.replace("\"", "");
+                                       }
+                               }
 				
 				if (distro == null) {
 					if (d.getName().equalsIgnoreCase(detect)) {
